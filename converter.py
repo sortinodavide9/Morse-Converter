@@ -1,7 +1,8 @@
 text = ""
-file = open("Morse.txt", "w")
+
 def converter(textList):
     global text
+    file = open("Morse.txt", "w")
     for textElement in textList:
         text += textElement
     file.write("TEXT:\n"+text+"\nCONVERSION:\n")
