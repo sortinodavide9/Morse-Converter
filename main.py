@@ -51,6 +51,9 @@ while True:
             pos = pg.mouse.get_pos()
             if(pos[0] >= 450 and pos[0] <= 600 and pos[1] >= 545 and pos[1] <= 595 ):
                 converter(textList)
+            if(pos[0] >= 20 and pos[0] <= 170 and pos[1] >= 545 and pos[1] <= 595 ):
+                textList.clear()
+                textList.append("")
     if(accapoCounter >= 53):#per andare a capo
         listCounter += 1
         textList.append("")
@@ -65,7 +68,10 @@ while True:
     pg.draw.rect(screen, (2,30,33),(450, 545,150,50))
     textButtonSurface = base_font.render("Stamp",True,(255,255,255))
     screen.blit(textButtonSurface,(450, 545))
-    
+    #Pulsante Clear
+    pg.draw.rect(screen, (2,30,33),(20, 545,150,50))
+    textButtonSurface = base_font.render("Clear",True,(255,255,255))
+    screen.blit(textButtonSurface,(20, 545))
     pg.display.update()
     
         
