@@ -29,7 +29,7 @@ while True:
             if event.key == K_ESCAPE:
                 pg.quit()
                 sys.exit()
-            elif event.key == K_RIGHT:
+            elif event.key == 8:#tasto per cnacellare
                     if(len(textList[listCounterTemp]) >= 1):
                         accapoCounter -= 2
                         #Cancellazione di un carattere:
@@ -38,6 +38,7 @@ while True:
                         for characters in range(len(temp)-1):
                             textList[listCounterTemp] += temp[characters] 
                     else:
+                        #cancellare il carattere se si trova nella riga precedente
                         listCounterTemp -= 1
                         if(len(textList[listCounterTemp]) >= 1):
                             accapoCounter -= 2
@@ -46,11 +47,11 @@ while True:
                             textList[listCounterTemp] = ""
                             for characters in range(len(temp)-1):
                                 textList[listCounterTemp] += temp[characters]
-        elif event.type == pg.MOUSEBUTTONDOWN:
+        elif event.type == pg.MOUSEBUTTONDOWN:#cliccare tasto stamp
             pos = pg.mouse.get_pos()
             if(pos[0] >= 450 and pos[0] <= 600 and pos[1] >= 545 and pos[1] <= 595 ):
                 converter(textList)
-    if(accapoCounter >= 45):
+    if(accapoCounter >= 53):#per andare a capo
         listCounter += 1
         textList.append("")
         accapoCounter = 0

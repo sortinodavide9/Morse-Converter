@@ -2,7 +2,6 @@ text = ""
 file = open("Morse.txt", "w")
 def converter(textList):
     global text
-    print("Funzione")
     for textElement in textList:
         text += textElement
     for c in text:
