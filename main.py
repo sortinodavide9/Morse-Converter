@@ -45,6 +45,10 @@ while True:
                             textList[listCounterTemp] = ""
                             for characters in range(len(temp)-1):
                                 textList[listCounterTemp] += temp[characters]
+        elif event.type == pg.MOUSEBUTTONDOWN:
+            pos = pg.mouse.get_pos()
+            if(pos[0] >= 450 and pos[0] <= 600 and pos[1] >= 545 and pos[1] <= 595 ):
+                print("Click!")
     if(accapoCounter >= 45):
         listCounter += 1
         textList.append("")
@@ -56,7 +60,10 @@ while True:
         screen.blit(textSurface,(0,posy))
         posy += 15
     #Pulsante di stampa:
-    pg.draw.rect(screen, (2,30,33),(WINDOW_SIZE[0]-170, WINDOW_SIZE[1]-65,150,50))
+    pg.draw.rect(screen, (2,30,33),(450, 545,150,50))
+    textButtonSurface = base_font.render("Stamp",True,(255,255,255))
+    screen.blit(textButtonSurface,(450, 545))
+    
     pg.display.update()
     
         
