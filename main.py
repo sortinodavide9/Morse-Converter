@@ -1,6 +1,7 @@
 import pygame as pg
 import sys
 from pygame import *
+from converter import converter
 pg.init()
 #Finestra:
 WINDOW_SIZE = (600,600)
@@ -48,7 +49,7 @@ while True:
         elif event.type == pg.MOUSEBUTTONDOWN:
             pos = pg.mouse.get_pos()
             if(pos[0] >= 450 and pos[0] <= 600 and pos[1] >= 545 and pos[1] <= 595 ):
-                print("Click!")
+                converter(textList)
     if(accapoCounter >= 45):
         listCounter += 1
         textList.append("")
