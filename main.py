@@ -13,8 +13,7 @@ base_font = pg.font.Font(None,32)
 textList = [""]
 listCounter = 0
 accapoCounter = 0
-
-while True:
+while True: 
     clock.tick(60)
     screen.fill((255,0,0)) 
     #POLL EVENTS
@@ -73,5 +72,6 @@ while True:
     textButtonSurface = base_font.render("Clear",True,(255,255,255))
     screen.blit(textButtonSurface,(20, 545))
     pg.display.update()
+    
     
         

@@ -1,3 +1,6 @@
+import pygame as pg
+from pygame import *
+import sys
 text = ""
 
 def converter(textList):
@@ -5,7 +8,6 @@ def converter(textList):
     file = open("Morse.txt", "w")
     for textElement in textList:
         text += textElement
-    file.write("TEXT:\n"+text+"\nCONVERSION:\n")
     for c in text:
         if(c == "a"):
             file.write(".- ")
@@ -61,5 +63,21 @@ def converter(textList):
             file.write("--.. ")
         else:
             file.write(" / ")
+    file = open("Morse.txt", "r")
+    punto = pg.mixer.Sound('..wav')# .
+    trattino = pg.mixer.Sound('-.wav')# -
+    for character in file.read():
+        pg.time.delay(500)
+        for event in pg.event.get():
+            if event.type == KEYDOWN:
+                pg.quit()
+                sys.exit()
+        if(character == "."):
+            punto.play()
+        elif(character == "-"):
+            trattino.play()
+        elif(character == " " or character == "/"):
+            pg.time.delay(200)
     file.close()
-    
+    pg.quit()
+    sys.exit()
